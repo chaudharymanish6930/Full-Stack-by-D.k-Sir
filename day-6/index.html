@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body{
+            background-color: black;
+        }
+        #heading{
+            color: white;
+        }
+        #paragraph{
+            color: white;
+        }
+        
+    </style>
+</head>
+<body id="body">
+    <h1 id="heading">Welcome to My Website</h1>
+    <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reprehenderit ut reiciendis, deleniti cupiditate nulla 
+        laboriosam quas magnam corporis fugiat maiores delectus!
+         Cum enim odio architecto quae consequuntur eum at distinctio.
+        </p>
+        <button id="button" onclick="changeBG()">click here</button>
+        <script>
+         const heading = document.getElementById('heading');
+        //  console.log(heading);
+        //  console.log(heading.textContent);
+
+        //  heading.innerText = 'Hello World';
+
+        // const button = document.getElementById('button');
+        // button.disabled=true;
+        // button.innerText = 'Button is disabled';
+        // function changeBG(){
+        //     const body = document.getElementById('body');
+        //     body.style.backgroundColor = 'blue';
+        // }
+        const button = document.getElementById('button');
+        button.addEventListener('click', function(){
+            button.innerText="please wait...";
+            button.disabled=true;
+        });
+
+        </script>
+</body>
+</html>
