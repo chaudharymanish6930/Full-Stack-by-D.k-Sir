@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Toggle</title>
+
+<style>
+
+body{
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+}
+
+/* Light mode style */
+.light-mode{
+    background-color: white;
+    color: black;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Reprehenderit ut reiciendis, deleniti cupiditate nulla
+laboriosam quas magnam corporis fugiat maiores delectus!
+Cum enim odio architecto quae consequuntur eum at distinctio.
+</p>
+
+<button id="button">Switch Mode</button>
+
+<script>
+
+const button = document.getElementById("button");
+
+button.addEventListener("click", function(){
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        button.innerText = "Dark Mode";
+    }else{
+        button.innerText = "Light Mode";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
