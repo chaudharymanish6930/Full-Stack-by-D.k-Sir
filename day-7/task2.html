@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Color Changer</h2>
+
+    <button class="color-btn">Red</button>
+    <button class="color-btn">Green</button>
+    <button class="color-btn">Blue</button>
+</body>
+
+<script>
+    const buttons = document.querySelectorAll(".color-btn")
+
+    buttons.forEach(function (btn) {
+        console.log(btn)
+
+        btn.addEventListener("click", function (event) {
+            
+    // event.target is the button that was clicked
+            const color = event.target.innerText.toLowerCase()
+    // Change the background color of the body to the color of the button 
+            document.body.style.backgroundColor = color
+
+        })
+
+    })
+</script>
+
+</html>
