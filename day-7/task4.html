@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Password Validation</title>
+</head>
+
+<body>
+
+<h2>Password Check</h2>
+
+<input type="password" id="password" placeholder="Enter password">
+<button onclick="checkPassword()">Check</button>
+
+<p id="message"></p>
+
+<script>
+
+function checkPassword(){
+
+    const password = document.getElementById("password").value
+    const message = document.getElementById("message")
+
+    // Check length
+    if(password.length < 8){
+        message.innerText = "Password must be at least 8 characters"
+        return
+    }
+
+    if(password.length > 10){
+        message.innerText = "Password must not exceed 10 characters"
+        return
+    }
+
+    // Check capital letter
+    const capitalCheck = /[A-Z]/
+
+    if(!capitalCheck.test(password)){
+        message.innerText = "Password must contain at least one capital letter"
+        return
+    }
+
+    message.innerText = "Password is valid ✅"
+
+}
+
+</script>
+
+</body>
+</html>
