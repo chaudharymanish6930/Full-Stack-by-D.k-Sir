@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Theme Toggle</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 
 <style>
 
@@ -56,7 +58,9 @@ button.addEventListener("click", function(){
 
 });
 
+localStorage.setItem("Name");
+console.log(localStorage.getItem("Name"));
 </script>
-
+<!-- localStorage.setItem("Name", "Email"); -->
 </body>
 </html>
