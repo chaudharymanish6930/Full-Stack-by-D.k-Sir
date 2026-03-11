@@ -4,7 +4,7 @@
 // }, 2000);
 // console.log("end");
 
-function processData(callback) {
+function processData(callback) {  // callback == done
     console.log("Processing data...");
     callback();
 }
