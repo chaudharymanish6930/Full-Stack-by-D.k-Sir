@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧪 PureVeda • Food Purity Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gradient-to-br from-emerald-50 to-teal-50 min-h-screen font-sans">
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+<div class="w-80 bg-white shadow-2xl flex flex-col">
+  <div class="p-6 border-b border-emerald-100">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl shadow-inner">🥛</div>
+      <div>
+        <h1 class="text-2xl font-bold text-emerald-700">PureVeda AI</h1>
+        <p class="text-xs text-emerald-500 tracking-widest">Gemini Powered</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- API KEY INPUT -->
+  <div class="p-4 border-b border-emerald-100 bg-emerald-50">
+    <p class="text-emerald-700 text-sm font-medium mb-2">🔑 Your Gemini API Key</p>
+    <div class="flex gap-2">
+      <input id="gemini-key" type="password" placeholder="AIzaSy..." 
+             class="flex-1 px-3 py-2 border border-emerald-200 rounded-lg text-sm focus:outline-none focus:border-emerald-500">
+      <button onclick="saveGeminiKey()" 
+              class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 rounded-lg text-sm">Save</button>
+    </div>
+    <p id="key-status" class="text-xs mt-2 text-emerald-600 font-medium"></p>
+  </div>
+
+  <div class="p-4 flex-1 overflow-y-auto">
+    <p class="text-emerald-600 text-sm font-medium mb-3 px-3">Popular Foods</p>
+    <div id="food-cards" class="space-y-3"></div>
+  </div>
+
+  <div class="p-4 border-t border-emerald-100 bg-emerald-50 text-center text-xs text-emerald-500">
+    Ask about any food • Purity tests • Nutrition • Benefits
+  </div>
+</div>
+
+    <!-- Main Chat Area -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <div class="bg-white border-b border-emerald-100 px-6 py-4 flex items-center justify-between shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-white text-2xl">🧪</div>
+          <div>
+            <h2 class="font-semibold text-xl text-emerald-800">Purity Assistant</h2>
+            <p class="text-emerald-500 text-sm">Always online • 100% natural knowledge</p>
+          </div>
+        </div>
+        <button onclick="clearChat()" class="flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-trash"></i> Clear Chat
+        </button>
+      </div>
+
+      <!-- Chat Messages -->
+      <div id="chat-window" class="flex-1 p-6 overflow-y-auto bg-[radial-gradient(#f0fdf4_1px,transparent_1px)] bg-[length:30px_30px] space-y-6">
+        <!-- Messages added by JS -->
+      </div>
+
+      <!-- Input Area -->
+      <div class="bg-white border-t border-emerald-100 p-4">
+        <div class="flex gap-3 bg-emerald-50 rounded-3xl p-2">
+          <input id="user-input" type="text" 
+                 class="flex-1 bg-transparent px-6 py-4 outline-none text-lg placeholder-emerald-400"
+                 placeholder="Ask about ghee, milk, butter...">
+          <button onclick="sendMessage()" 
+                  class="w-14 h-14 bg-emerald-600 hover:bg-emerald-700 transition-all rounded-3xl text-white flex items-center justify-center shadow-lg">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <p class="text-center text-[10px] text-emerald-400 mt-2">Press Enter to send • Powered by Pure Knowledge</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
